@@ -1,6 +1,7 @@
 import colorgram
 from turtle import Turtle, Screen, colormode
-import random as r
+import secrets
+
 colormode(255)
 def get_colors(color_list, palette):
     for i in palette:
@@ -18,7 +19,7 @@ def draw_circles(obj, x_pos, y_pos, original_x, color_list):
         for j in range(18):
             obj.down()
             t_clone = obj.clone()
-            t_clone.color(r.choice(color_list))
+            t_clone.color(secrets.SystemRandom().choice(color_list))
             t_clone.shape("circle")
             x_pos += 50
             obj.up()
